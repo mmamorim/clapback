@@ -1,0 +1,29 @@
+{
+  "name": "@mmamorim/clapback",
+  "version": "1.0.0",
+  "description": "Um banco de dados simples",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmamorim/clapback.git"
+  },
+  "author": "Marcelo Amorim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmamorim/clapback/issues"
+  },
+  "homepage": "https://github.com/mmamorim/clapback#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "chalk": "^5.4.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "lowdb": "^7.0.1",
+    "socket.io": "^4.8.1",
+    "ws": "^8.18.1"
+  }
+}

@@ -1,14 +1,7 @@
-# clapback
-
-~~~bash
-npm install @mmamorim/clapback
-~~~
-
-~~~js
 import express from 'express';
 import bodyParser from 'body-parser'
 import cors from "cors"
-import clapback from "@mmamorim/clapback"
+import clapback from "./index.js"
 
 const server = express();
 server.use(bodyParser.json());       // suporte para JSON-encoded bodies
@@ -29,4 +22,3 @@ server.get('/', (req, res) => {
 server.listen(PORT, () => {
     console.log('Server escutando na porta '+PORT);
 });
-~~~
