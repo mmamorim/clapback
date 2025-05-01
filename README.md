@@ -1,6 +1,6 @@
-<img src="./assets/logo600.png" alt="clapback" title="clapback" height="60" />
+<img src="./assets/logo600.png" alt="clapback" title="clapback" height="80" />
 
-# 
+###
 > Simple and fast JSON database
 > 
 
