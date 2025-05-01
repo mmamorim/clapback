@@ -1,7 +1,7 @@
 {
   "name": "@mmamorim/clapback",
   "version": "1.0.0",
-  "description": "Um banco de dados simples",
+  "description": "Simple JSON database",
   "main": "index.js",
   "type": "module",
   "scripts": {

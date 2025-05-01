@@ -1,4 +1,8 @@
-# clapback
+<img src="./assets/logo600.png" alt="clapback" title="clapback" height="60" />
+
+###
+> Simple and fast JSON database
+> 
 
 ~~~bash
 npm install @mmamorim/clapback

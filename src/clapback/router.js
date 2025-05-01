@@ -33,14 +33,14 @@ function getRouter(cb,PORT) {
 
     router.post('/setData', (req, res) => {
         if(req.body && req.body.path && req.body.data !== undefined) {
-            console.log("req.body", req.body);
+            //console.log("req.body", req.body);
             cb.set(req.body.path,req.body.data)
         }
         res.send("ok");
     });
 
     console.log(chalk.blue("-------------------------------------"));
-    console.log("🔥🚀 Data viewer on: ");
+    console.log("🚀 Data viewer on: ");
     console.log("     "+chalk.blue(urlServer+"viewer"));
     console.log(chalk.blue("-------------------------------------"));
     

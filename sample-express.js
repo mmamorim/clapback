@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser'
 import cors from "cors"
-import clapback from "./clapback/clapback.js"
+import clapback from "./index.js"
 
 const server = express();
 server.use(bodyParser.json());       // suporte para JSON-encoded bodies
@@ -10,16 +10,14 @@ server.use(bodyParser.urlencoded({     // suporte para URL-encoded bodies
 }));
 server.use(cors())
 
-const PORT = 3040
+const port = process.env.PORT || 3000;
 
-clapback.init().then(() => {
-    server.use("/clapback",clapback.serve(PORT))
-})
+await clapback.init({ server, port, dbFileName: 'db.json' })
 
-server.get('/',(req, res) => {
-    res.send('🙋‍♂️ Oi gente...vc acessou a raiz /');
+server.get('/', (req, res) => {
+    res.send('🙋‍♂️ Hello...route /');
 });
 
-server.listen(PORT, () => {
-    console.log('Server escutando na porta 3040');
+server.listen(port, () => {
+    console.log('Server is running on port '+port);
 });
