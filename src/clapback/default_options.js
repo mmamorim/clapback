@@ -5,5 +5,7 @@ export default {
     dbFileName: 'db.json',
     route: '/clapback',
     defaultData: {},
-    realtime: true
+    realtime: false,
+    apidocFile: 'apidoc.json',
+    apidocDefaultData: {},
 }

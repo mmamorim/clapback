@@ -1,6 +1,7 @@
 import express from 'express'
 import chalk from 'chalk';
 import page from "./viewer/page.js"
+import pageApi from "./api-viewer/page.js"
 
 const router = express.Router();
 
@@ -19,6 +20,14 @@ function getRouter(cb,PORT) {
         res.send(page(urlServer))
     })
 
+    router.get('/apidoc', (req, res) => {
+        res.send(pageApi(urlServer+'apidocjson'))
+    })
+
+    router.get('/apidocjson', (req, res) => {
+        res.json(cb.apidocJSON.data);
+    })
+
     router.get('/getData', (req, res) => {
         //console.log("req.query", req.query);
         let path = "/"
@@ -31,10 +40,30 @@ function getRouter(cb,PORT) {
         res.json({ path, data });
     });
 
+    router.get('/getDataApi', (req, res) => {
+        //console.log("req.query", req.query);
+        let path = "/"
+        if (req.query.path) {
+            path = req.query.path
+        }
+        //console.log("path", path);
+        let data = cb.getApi(path)
+        //console.log("data", data);
+        res.json({ path, data });
+    });
+    
     router.post('/setData', (req, res) => {
         if(req.body && req.body.path && req.body.data !== undefined) {
             //console.log("req.body", req.body);
             cb.set(req.body.path,req.body.data)
+        }
+        res.send("ok");
+    });
+
+    router.post('/setDataApi', (req, res) => {
+        if(req.body && req.body.path && req.body.data !== undefined) {
+            //console.log("req.body", req.body);
+            cb.setApi(req.body.path,req.body.data)
         }
         res.send("ok");
     });

@@ -13,6 +13,7 @@ export default function(serverUrl) { return `
     <link rel="icon" type="image/svg+xml" href="${iconUrl}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clapback viewer</title>
+    <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
     <style>
         ${decodedcss}
     </style>

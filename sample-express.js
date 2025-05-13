@@ -18,6 +18,11 @@ server.get('/', (req, res) => {
     res.send('🙋‍♂️ Hello...route /');
 });
 
+server.get('/frutas', (req, res) => {
+    let frutas = clapback.get("/frutas")
+    res.json(frutas)
+});
+
 server.listen(port, () => {
     console.log('Server is running on port '+port);
 });

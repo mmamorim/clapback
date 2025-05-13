@@ -2,7 +2,12 @@
 
 ###
 > Simple and fast JSON database
-> 
+
+
+Simple to use type-safe local JSON database 🦉
+
+Inspired by (and largely compatible with) the Firebase realtime database
+
 
 ~~~bash
 npm install @mmamorim/clapback
