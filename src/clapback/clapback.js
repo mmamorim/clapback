@@ -1,4 +1,5 @@
 import { JSONFilePreset } from 'lowdb/node'
+import { nanoid } from 'nanoid'
 import { parserGet, parserSet } from './path-parser.js'
 import default_options from './default_options.js'
 import serverExpress from "./express-server.js"
@@ -27,6 +28,10 @@ const cb = {
         if(options.realtime) {
             socketServer.init(cb, serverExpress.httpServer)
         }
+    },
+
+    newID(prefix = "", length = 5) {
+        return prefix+nanoid(length)
     },
 
     get(path) {

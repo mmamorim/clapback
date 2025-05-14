@@ -20,7 +20,14 @@ server.get('/', (req, res) => {
 
 server.get('/frutas', (req, res) => {
     let frutas = clapback.get("/frutas")
-    res.json(frutas)
+    res.status(200).json(frutas)
+});
+
+server.post('/frutas/:id', (req, res) => {
+    let id = clapback.newID("FRUTA-")
+    let data = { id, ...req.body }
+    clapback.set("/frutas/"+data.id, data)
+    res.status(200).json({ msg: "Inserção ok.", data })
 });
 
 server.listen(port, () => {
